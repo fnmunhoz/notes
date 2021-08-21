@@ -1,3 +1,5 @@
+import 'normalize.css'
+import '../styles/vars.css'
 import type { AppProps } from 'next/app'
 
 function MyApp({ Component, pageProps }: AppProps) {
