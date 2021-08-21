@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  app:
+    build:
+      dockerfile: ./Dockerfile.dev
+      context: .
+    command: npm run dev
+    working_dir: /opt/app
+    volumes:
+      - .:/opt/app
+      - node_modules:/opt/app/node_modules
+    ports:
+      - "3000:3000"
+
+volumes:
+  node_modules:
