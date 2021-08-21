@@ -29,6 +29,17 @@ docker-compose up
 
 Then, open the app on the browser at the following address: http://localhost:3000
 
+## Production mode
+
+To start the app in production mode, go to the repository root folder, and run:
+
+```sh
+docker-compose run --rm app npm install
+docker-compose run --rm --service-ports prod
+```
+
+Then, open the app on the browser at the following address: http://localhost:4000
+
 ## Stack
 
 [Next.js](https://nextjs.org) project bootstrapped with [create-next-app](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) and deployed to [Vercel](https://vercel.com).
