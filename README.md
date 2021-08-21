@@ -1,34 +1,40 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Notes - small app to keep my development notes
 
-## Getting Started
+Available at https://notes.munhoz.dev
 
-First, run the development server:
+## Requirements
 
-```bash
-npm run dev
-# or
-yarn dev
+To run the app locally, you will need the following installed on your environment:
+
+  * [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+  * [docker and docker-compose](https://docs.docker.com/get-docker/)
+
+## Cloning
+
+Then clone the app via git:
+
+```sh
+git clone git@github.com:fnmunhoz/notes.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Development mode
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+To start the app in development mode, go to the repository root folder, and run:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```sh
+docker-compose run --rm app npm install
+docker-compose up
+```
 
-## Learn More
+Then, open the app on the browser at the following address: http://localhost:3000
 
-To learn more about Next.js, take a look at the following resources:
+## Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+[Next.js](https://nextjs.org) project bootstrapped with [create-next-app](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) and deployed to [Vercel](https://vercel.com).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Status
 
-## Deploy on Vercel
+![Vercel status](https://therealsujitk-vercel-badge.vercel.app/?app=notes-munhoz-dev)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
