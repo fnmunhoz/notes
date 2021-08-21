@@ -1,4 +1,4 @@
-version: "3.8"
+version: '3.8'
 services:
   app:
     build:
@@ -10,7 +10,27 @@ services:
       - .:/opt/app
       - node_modules:/opt/app/node_modules
     ports:
-      - "3000:3000"
+      - '3000:3000'
+
+  prod:
+    profiles: ['prod']
+    build:
+      dockerfile: ./Dockerfile.dev
+      context: .
+    entrypoint: ['/bin/sh', '-c']
+    command:
+      - |
+        rm -rf .next/*
+        npm run build
+        npm run start
+    working_dir: /opt/app
+    volumes:
+      - .:/opt/app
+      - node_modules:/opt/app/node_modules
+      - prod_cache:/opt/app/.next
+    ports:
+      - '4000:3000'
 
 volumes:
   node_modules:
+  prod_cache:
