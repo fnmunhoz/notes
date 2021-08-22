@@ -1,4 +1,10 @@
-import Document, { DocumentContext } from 'next/document'
+import Document, {
+  DocumentContext,
+  Head,
+  Html,
+  Main,
+  NextScript,
+} from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 
 export default class MyDocument extends Document {
@@ -26,5 +32,31 @@ export default class MyDocument extends Document {
     } finally {
       sheet.seal()
     }
+  }
+
+  render() {
+    return (
+      <Html>
+        <Head />
+        <body data-theme="light">
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                (function () {
+                  try {
+                    var currentTheme = localStorage.getItem('theme');
+                    var prefersDarkTheme = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+                    if (!currentTheme && prefersDarkTheme) document.body.dataset.theme = 'dark';
+                    if (!currentTheme) return;
+                    document.body.dataset.theme = currentTheme;
+                  } catch (e) {}
+                })();`,
+            }}
+          />
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    )
   }
 }
