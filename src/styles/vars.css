@@ -1,0 +1,4 @@
+body {
+  --colors-primary: hsl(222deg, 14%, 20%);
+  --colors-background: hsl(0deg, 0%, 100%);
+}
