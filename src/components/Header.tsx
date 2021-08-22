@@ -1,12 +1,14 @@
 import theme from '@src/styles/theme'
 import Link from 'next/link'
 import styled from 'styled-components'
+import ThemeSwitcher from './ThemeSwitcher'
 
 const Header = ({ siteTitle }: { siteTitle: string }) => (
   <Container>
     <h1>
       <Link href="/">{siteTitle}</Link>
     </h1>
+    <ThemeSwitcher />
   </Container>
 )
 

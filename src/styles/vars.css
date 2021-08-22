@@ -1,4 +1,8 @@
-body {
+body[data-theme='light'] {
   --colors-primary: hsl(222deg, 14%, 20%);
   --colors-background: hsl(0deg, 0%, 100%);
+}
+body[data-theme='dark'] {
+  --colors-primary: hsl(0deg, 0%, 100%);
+  --colors-background: hsl(222deg, 15%, 20%);
 }
